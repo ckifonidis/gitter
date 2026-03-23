@@ -2,6 +2,7 @@ import { existsSync } from 'fs';
 import pc from 'picocolors';
 import { select } from '@inquirer/prompts';
 import { loadRegistry, searchEntries } from '../registry.js';
+import { parseRemoteUrl } from '../git.js';
 import type { RegistryEntry } from '../types.js';
 
 /**
@@ -44,7 +45,15 @@ export async function infoCommand(query: string): Promise<void> {
     ? entry.localPath
     : `${entry.localPath} ${pc.red('[MISSING]')}`;
 
+  // Platform & Owner (derived from origin remote)
+  const originRemote = entry.remotes.find(r => r.name === 'origin') ?? entry.remotes[0];
+  const parsed = originRemote ? parseRemoteUrl(originRemote.fetchUrl) : null;
+
   console.log(`\n${pc.bold('Repository Name:')}  ${entry.repoName}`);
+  if (parsed) {
+    console.log(`${pc.bold('Host:')}             ${parsed.host}`);
+    console.log(`${pc.bold('Owner:')}            ${parsed.owner}`);
+  }
   console.log(`${pc.bold('Local Path:')}       ${pathDisplay}`);
 
   // Remotes

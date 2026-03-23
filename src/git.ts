@@ -132,6 +132,40 @@ export function getCurrentBranch(cwd?: string): string {
 }
 
 /**
+ * Parse a git remote URL to extract the host and owner.
+ * Works backwards from the repo name: the segment immediately before the repo
+ * (skipping connectors like _git) is the owner.
+ * Supports HTTPS and SSH formats.
+ */
+export function parseRemoteUrl(url: string): { host: string; owner: string } | null {
+  let host: string;
+  let pathStr: string;
+
+  // HTTPS: https://[user@]host/path/to/repo.git
+  const httpsMatch = url.match(/^https?:\/\/(?:[^@]+@)?([^/]+)\/(.+?)(?:\.git)?$/);
+  if (httpsMatch) {
+    host = httpsMatch[1];
+    pathStr = httpsMatch[2];
+  } else {
+    // SSH: git@host:path/to/repo.git
+    const sshMatch = url.match(/^[^@]+@([^:]+):(.+?)(?:\.git)?$/);
+    if (sshMatch) {
+      host = sshMatch[1];
+      pathStr = sshMatch[2];
+    } else {
+      return null;
+    }
+  }
+
+  const segments = pathStr.split('/').filter(s => s !== '_git');
+  if (segments.length < 2) return null;
+
+  // Owner is the segment right before the repo name
+  const owner = segments[segments.length - 2];
+  return { host, owner };
+}
+
+/**
  * Collect all repository metadata into a RegistryEntry.
  */
 export function collectRepoMetadata(cwd?: string): RegistryEntry {
