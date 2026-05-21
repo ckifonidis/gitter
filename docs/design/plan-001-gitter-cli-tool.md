@@ -28,7 +28,7 @@ Build **gitter**, a TypeScript CLI tool that maintains a persistent JSON registr
 **Dependencies**: None (starting point)
 
 **Tasks**:
-1. Initialize the project with `npm init` inside `/Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter/`
+1. Initialize the project with `npm init` inside `/Users/giorgosmarinos/aiwork/coding-platform/gitter/`
 2. Configure `package.json` with `"type": "module"`, `bin` field pointing to `./dist/cli.js`, and npm scripts (`dev`, `build`, `start`, `typecheck`)
 3. Create `tsconfig.json` with target ES2022, module Node16, moduleResolution Node16, strict mode, outDir `dist`, rootDir `src`
 4. Install production dependencies: `commander`, `@inquirer/prompts`, `picocolors`, `cli-table3`
@@ -48,7 +48,7 @@ Build **gitter**, a TypeScript CLI tool that maintains a persistent JSON registr
 
 **Verification**:
 ```bash
-cd /Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter
+cd /Users/giorgosmarinos/aiwork/coding-platform/gitter
 npx tsx src/cli.ts --help
 npx tsc --noEmit
 npm run build && head -1 dist/cli.js  # should show #!/usr/bin/env node
@@ -108,7 +108,7 @@ npm run build && head -1 dist/cli.js  # should show #!/usr/bin/env node
 **Verification**:
 ```bash
 # Test git utilities by running inside the gitter project (or any git repo)
-cd /Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter
+cd /Users/giorgosmarinos/aiwork/coding-platform/gitter
 npx tsx -e "import { isInsideGitRepo } from './src/git.js'; console.log(isInsideGitRepo())"
 # Test registry by creating a temp entry
 npx tsx -e "
@@ -210,7 +210,7 @@ console.log('Entries:', reg.repositories.length);
 
 **Verification**:
 ```bash
-cd /Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter
+cd /Users/giorgosmarinos/aiwork/coding-platform/gitter
 
 # Test scan
 npx tsx src/cli.ts scan
@@ -236,7 +236,7 @@ echo "Target: $TARGET"
 npx tsx src/cli.ts init
 
 # Test outside git repo
-cd /tmp && npx tsx /Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter/src/cli.ts scan 2>&1; echo "Exit code: $?"
+cd /tmp && npx tsx /Users/giorgosmarinos/aiwork/coding-platform/gitter/src/cli.ts scan 2>&1; echo "Exit code: $?"
 
 # Test missing HOME
 # HOME= npx tsx src/cli.ts list 2>&1; echo "Exit code: $?"
@@ -269,7 +269,7 @@ cd /tmp && npx tsx /Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/
 
 **Verification**:
 ```bash
-cd /Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter
+cd /Users/giorgosmarinos/aiwork/coding-platform/gitter
 npm run build
 npm link
 gitter --version
@@ -298,15 +298,15 @@ pwd  # should be the repo's path
 
 **Tasks**:
 1. Update `/Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/CLAUDE.md` with gitter tool documentation in XML format
-2. Create `/Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter/Issues - Pending Items.md`
-3. Create `/Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter/docs/design/project-design.md` with architecture overview
+2. Create `/Users/giorgosmarinos/aiwork/coding-platform/gitter/Issues - Pending Items.md`
+3. Create `/Users/giorgosmarinos/aiwork/coding-platform/gitter/docs/design/project-design.md` with architecture overview
 4. Verify all test scripts are in `test_scripts/` folder
 5. Final typecheck pass: `npx tsc --noEmit`
 
 **Files to Create/Modify**:
 - `/Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/CLAUDE.md` (add gitter tool docs)
-- `/Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter/Issues - Pending Items.md`
-- `/Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter/docs/design/project-design.md`
+- `/Users/giorgosmarinos/aiwork/coding-platform/gitter/Issues - Pending Items.md`
+- `/Users/giorgosmarinos/aiwork/coding-platform/gitter/docs/design/project-design.md`
 
 **Acceptance Criteria**:
 - CLAUDE.md contains gitter documentation in the XML tool format
@@ -318,7 +318,7 @@ pwd  # should be the repo's path
 
 ## File Manifest
 
-All files relative to `/Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter/`:
+All files relative to `/Users/giorgosmarinos/aiwork/coding-platform/gitter/`:
 
 ### New Files to Create
 

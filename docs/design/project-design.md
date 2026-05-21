@@ -202,7 +202,7 @@ export interface Registry {
   "repositories": [
     {
       "repoName": "gitter",
-      "localPath": "/Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter",
+      "localPath": "/Users/giorgosmarinos/aiwork/coding-platform/gitter",
       "remotes": [
         {
           "name": "origin",
@@ -2808,7 +2808,7 @@ function removeTagsFromEntry(entry: RegistryEntry, tagsToRemove: string[]): void
   "repositories": [
     {
       "repoName": "gitter",
-      "localPath": "/Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter",
+      "localPath": "/Users/giorgosmarinos/aiwork/coding-platform/gitter",
       "remotes": [
         {
           "name": "origin",

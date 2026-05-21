@@ -14,7 +14,7 @@ import { tmpdir } from 'os';
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
-const PROJECT_ROOT = '/Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter';
+const PROJECT_ROOT = '/Users/giorgosmarinos/aiwork/coding-platform/gitter';
 const CLI = `npx tsx ${PROJECT_ROOT}/src/cli.ts`;
 
 // We use a temp HOME so we never touch the real registry

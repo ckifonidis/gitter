@@ -734,7 +734,7 @@ program
 
 ### F.3 Update Project CLAUDE.md
 
-**File**: `/Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter/CLAUDE.md` (if it exists, or the parent project's CLAUDE.md)
+**File**: `/Users/giorgosmarinos/aiwork/coding-platform/gitter/CLAUDE.md` (if it exists, or the parent project's CLAUDE.md)
 
 **Action**: Add documentation for the `describe` command in the `<toolName>` format specified in the global CLAUDE.md instructions.
 

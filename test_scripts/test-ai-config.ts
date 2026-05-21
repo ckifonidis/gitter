@@ -14,7 +14,7 @@ import { tmpdir } from 'os';
 // ---------------------------------------------------------------------------
 // Constants
 // ---------------------------------------------------------------------------
-const PROJECT_ROOT = '/Users/giorgosmarinos/aiwork/coding-platform/macbook-desktop/gitter';
+const PROJECT_ROOT = '/Users/giorgosmarinos/aiwork/coding-platform/gitter';
 
 // ---------------------------------------------------------------------------
 // Test harness
